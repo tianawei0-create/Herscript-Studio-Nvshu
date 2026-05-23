@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HerScript Studio | Nüshu Digital Heritage Studio</title>
+  <title>HerScript Studio | Nüshu Cultural Learning Website</title>
+  <meta name="description" content="HerScript Studio is a Nüshu cultural learning website with dictionary, stories, writing practice, listening resources, interactive games, and a board-game prototype." />
+  <link rel="icon" type="image/png" href="./11717.PNG" />
   <!-- Nyushu font layer added: put downloaded font files in ./fonts/ to activate decorative Nyushu typography. -->
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap');
     @import url('https://cdn.jsdelivr.net/gh/nushu-script/font-unicode-nushu@1.0.0/index.css');
 
     /* Nyushu font setup / 女书字体设置：下载 GitHub release 字体后，放进与本 HTML 同级的 /fonts 文件夹。 */
@@ -1051,7 +1053,7 @@
     .phrase-chip.selected{background:#151313;color:#fff}
     .mission-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;}
 
-    /* Practice white cloth writing / 白布书写练习 */
+    /* Practice white cloth writing / 书写练习练习 */
     .cloth-practice-wrap{position:relative;min-height:480px;border-radius:24px;background:radial-gradient(circle at 12% 18%, rgba(0,0,0,.018), transparent 18%),radial-gradient(circle at 80% 76%, rgba(0,0,0,.015), transparent 20%),linear-gradient(135deg,#fffdf9 0%,#fffaf2 100%);border:0;box-shadow:inset 0 0 38px rgba(0,0,0,.035),0 14px 40px rgba(0,0,0,.05);overflow:hidden;}
     .cloth-practice-wrap::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 20%, rgba(0,0,0,.018), transparent 18%),radial-gradient(circle at 78% 64%, rgba(0,0,0,.014), transparent 22%);pointer-events:none;opacity:.7;}
     .trace-template{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(260px,42vw);height:min(260px,42vw);object-fit:contain;opacity:.14;pointer-events:none;z-index:1;transition:opacity .25s ease;}
@@ -2122,7 +2124,206 @@ body.lang-zh .game-result{
   .listen-video-frame{border-radius:20px;}
 }
 
-</style>
+
+/* ===== Logo + clarity refinements / Logo 与信息清晰度优化 ===== */
+.site-brand{
+  gap:14px;
+}
+.brand-logo-wrap{
+  width:42px;
+  height:42px;
+  flex:0 0 42px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:#111;
+  overflow:hidden;
+  box-shadow:0 8px 22px rgba(0,0,0,.10);
+}
+.brand-logo-img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.brand-logo-wrap .brand-mark{
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  font-size:11px;
+  background:#111;
+  color:#fff;
+}
+.brand-fallback{
+  display:none;
+}
+.objective-note{
+  margin-top:18px;
+  padding:14px 16px;
+  border:1px solid rgba(0,0,0,.08);
+  border-radius:18px;
+  background:rgba(255,255,255,.72);
+  color:#5f5852;
+  font-size:13px;
+  line-height:1.75;
+}
+.section-head p,
+.wix-page-copy p,
+.portal-hero-block p,
+.wix-section-title p,
+.portal-card em,
+.wix-product-card p,
+.wix-accordion-copy p,
+.wix-accordion-list span,
+.panel,
+.practice-note,
+.game-result,
+.board-info-box{
+  text-wrap:pretty;
+}
+@media (max-width:700px){
+  .brand-logo-wrap{width:36px;height:36px;flex-basis:36px;}
+}
+
+
+
+/* ===== Font refresh / 字体更新：Arial 清晰无衬线风格 ===== */
+body{
+  font-family:Arial, Helvetica, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+button,input,textarea,select{
+  font-family:Arial, Helvetica, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+.kicker,.panel-title,.preview-title,.mega-kicker,.navlinks a,.top-link,.mega-trigger,.mini-btn,.nav-cta,.wix-nav-cta,.lang-btn{
+  font-family:Arial, Helvetica, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+.hero h1,.wix-home h1,.wix-page-copy h2,.portal-hero-block h2,.section-head h2,.wix-section-title h3,.wix-accordion-copy h3,.story-scene h3{
+  font-family:Arial, Helvetica, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-weight:800;
+  letter-spacing:-1.8px;
+}
+.brand,.wix-brand,.portal-card strong,.wix-product-card strong,.preview-card b,.wix-feature-strip b,.wix-feature-cards-large strong{
+  font-family:Arial, Helvetica, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-weight:800;
+}
+.hero p,.wix-home p,.wix-page-copy p,.wix-section-title p,.portal-hero-block p,.section-head p,.dict-card p,.donate-copy,.wix-product-card p,.wix-accordion-copy p{
+  font-family:Arial, Helvetica, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  line-height:1.85;
+}
+
+
+/* ===== Chinese font refresh / 中文字体更新：微软雅黑，更清晰现代 ===== */
+body.lang-zh,
+body.lang-zh p,
+body.lang-zh span,
+body.lang-zh button,
+body.lang-zh input,
+body.lang-zh textarea,
+body.lang-zh select,
+body.lang-zh .panel,
+body.lang-zh .result,
+body.lang-zh .dict-card,
+body.lang-zh .story-card,
+body.lang-zh .game-result,
+body.lang-zh .wix-page-copy p,
+body.lang-zh .wix-home p,
+body.lang-zh .section-head p,
+.only-zh{
+  font-family:"Microsoft YaHei","微软雅黑","PingFang SC","Noto Sans SC",Arial,sans-serif!important;
+  letter-spacing:.01em;
+}
+
+body.lang-zh h1,
+body.lang-zh h2,
+body.lang-zh h3,
+body.lang-zh .brand,
+body.lang-zh .wix-brand,
+body.lang-zh .hero h1,
+body.lang-zh .wix-home h1,
+body.lang-zh .wix-page-copy h2,
+body.lang-zh .wix-section-title h3,
+body.lang-zh .section-head h2,
+body.lang-zh .portal-hero-block h2,
+body.lang-zh .clean-category-card strong,
+body.lang-zh .wix-product-card strong,
+body.lang-zh .preview-card b,
+body.lang-zh .story-scene h3,
+h1 .only-zh,
+h2 .only-zh,
+h3 .only-zh{
+  font-family:"Microsoft YaHei","微软雅黑","PingFang SC","Noto Sans SC",Arial,sans-serif!important;
+  font-weight:800;
+  letter-spacing:-.02em;
+}
+
+body.lang-zh .kicker,
+body.lang-zh .wix-kicker,
+body.lang-zh .panel-title,
+body.lang-zh .navlinks a,
+body.lang-zh .wix-navlinks .top-link,
+body.lang-zh .mini-btn,
+body.lang-zh .btn,
+body.lang-zh .donate-btn,
+body.lang-zh .board-tag,
+body.lang-zh .achievement-badge{
+  font-family:"Microsoft YaHei","微软雅黑","PingFang SC","Noto Sans SC",Arial,sans-serif!important;
+  font-weight:800;
+}
+
+  
+
+/* ===== Mature company-style About page / 成熟公司式 About 页面 ===== */
+.company-about-page{background:#fbfaf7;overflow:hidden;}
+.about-company-hero{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:end;padding:18px 0 30px;border-bottom:1px solid rgba(17,17,17,.08);margin-bottom:24px;}
+.about-eyebrow{font-size:12px;font-weight:900;letter-spacing:1.4px;text-transform:uppercase;color:#7b746d;margin-bottom:18px;}
+.about-company-hero h2{margin:0;font-size:clamp(46px,6vw,88px);line-height:.94;letter-spacing:-2.8px;max-width:980px;}
+.about-hero-card{background:#fff;border:1px solid rgba(17,17,17,.08);border-radius:30px;padding:26px;box-shadow:0 18px 48px rgba(0,0,0,.055);}
+.about-logo-img{width:92px;height:92px;object-fit:contain;border-radius:24px;background:#f8f4ef;border:1px solid rgba(17,17,17,.08);padding:10px;margin-bottom:20px;}
+.about-logo-fallback{width:92px;height:92px;border-radius:24px;background:#111;color:#fff;align-items:center;justify-content:center;font-weight:900;font-size:22px;margin-bottom:20px;}
+.about-hero-card p{margin:0;color:#5f5852;line-height:1.9;font-size:14px;}
+.about-overview-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-bottom:18px;}
+.about-stat-card{background:#fff;border:1px solid rgba(17,17,17,.08);border-radius:26px;padding:24px;box-shadow:0 14px 34px rgba(0,0,0,.04);min-height:225px;}
+.about-stat-card span{display:block;color:#8a8179;font-size:12px;font-weight:900;letter-spacing:1px;margin-bottom:46px;}
+.about-stat-card b{display:block;font-size:24px;line-height:1.1;letter-spacing:-.7px;margin-bottom:12px;}
+.about-stat-card p{margin:0;color:#6a625c;line-height:1.75;font-size:13px;}
+.about-section-block{margin-top:18px;background:#fff;border:1px solid rgba(17,17,17,.08);border-radius:30px;padding:28px;box-shadow:0 14px 34px rgba(0,0,0,.04);}
+.about-section-title{font-size:12px;font-weight:900;letter-spacing:1.2px;text-transform:uppercase;color:#7b746d;margin-bottom:18px;}
+.about-service-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;}
+.about-service-card{border:1px solid rgba(17,17,17,.08);background:#fbfaf7;border-radius:26px;padding:24px;text-align:left;cursor:pointer;transition:transform .25s ease,box-shadow .25s ease,background .25s ease,color .25s ease;}
+.about-service-card:hover{transform:translateY(-5px);box-shadow:0 22px 55px rgba(0,0,0,.1);background:#111;color:#fff;}
+.about-service-card small{display:block;color:#8a8179;font-weight:900;letter-spacing:1px;text-transform:uppercase;margin-bottom:54px;}
+.about-service-card strong{display:block;font-size:26px;line-height:1.05;letter-spacing:-.8px;margin-bottom:14px;}
+.about-service-card p{margin:0;color:#6a625c;line-height:1.75;font-size:13px;}
+.about-service-card:hover small,.about-service-card:hover p{color:rgba(255,255,255,.68);}
+.about-two-column{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px;}
+.about-dark-panel,.about-values-panel{border-radius:30px;padding:30px;border:1px solid rgba(17,17,17,.08);box-shadow:0 14px 34px rgba(0,0,0,.04);}
+.about-dark-panel{background:#111;color:#fff;}
+.about-dark-panel .panel-title{color:rgba(255,255,255,.62);}
+.about-dark-panel h3{margin:40px 0 20px;font-size:clamp(32px,4vw,54px);line-height:.98;letter-spacing:-1.6px;}
+.about-dark-panel p{margin:0;color:rgba(255,255,255,.72);line-height:1.85;font-size:14px;}
+.about-values-panel{background:#fff;}
+.about-value-row{display:grid;grid-template-columns:140px 1fr;gap:16px;padding:18px 0;border-bottom:1px solid rgba(17,17,17,.08);}
+.about-value-row:last-child{border-bottom:0;}
+.about-value-row b{font-size:22px;letter-spacing:-.5px;}
+.about-value-row span{color:#6a625c;line-height:1.7;font-size:14px;}
+.mature-board-extension{margin-top:0;}
+.about-product-panel h3{margin:0 0 14px;font-size:38px;line-height:1;letter-spacing:-1px;}
+.about-product-panel p{margin:0;color:#625b55;line-height:1.95;font-size:14px;}
+.about-process-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;}
+.about-process-grid div{padding:22px;border-radius:24px;background:#fbfaf7;border:1px solid rgba(17,17,17,.08);}
+.about-process-grid span{display:block;color:#8a8179;font-size:12px;font-weight:900;letter-spacing:1px;margin-bottom:32px;}
+.about-process-grid b{display:block;font-size:22px;letter-spacing:-.5px;margin-bottom:10px;}
+.about-process-grid p{margin:0;color:#6a625c;line-height:1.7;font-size:13px;}
+.about-contact-band{margin-top:18px;display:grid;grid-template-columns:1fr auto;gap:22px;align-items:center;padding:30px;border-radius:30px;background:#111;color:#fff;}
+.about-contact-band h3{margin:8px 0 0;max-width:860px;font-size:clamp(28px,4vw,52px);line-height:1;letter-spacing:-1.4px;}
+.about-contact-band .panel-title{color:rgba(255,255,255,.62);}
+.about-contact-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end;}
+.about-contact-band .donate-btn.light{background:#fff;color:#111;}
+@media(max-width:1100px){.about-company-hero,.about-overview-grid,.about-service-grid,.about-two-column,.about-process-grid,.about-contact-band{grid-template-columns:1fr;}.about-contact-actions{justify-content:flex-start;}.about-service-card small{margin-bottom:28px;}}
+@media(max-width:700px){.about-company-hero h2{font-size:42px;letter-spacing:-1.4px;}.about-section-block,.about-dark-panel,.about-values-panel,.about-contact-band{padding:20px;border-radius:24px;}.about-value-row{grid-template-columns:1fr;gap:8px;}.about-stat-card span{margin-bottom:24px;}.about-product-panel h3{font-size:30px;}}
+
+  </style>
 
 
   <!-- Image path fallback / 图片路径自动修复：如果同级文件夹找不到图片，会自动到 ./images/ 文件夹里寻找 -->
@@ -2176,8 +2377,11 @@ body.lang-zh .game-result{
 
   <div class="shell">
 <nav class="nav premium-nav wix-nav">
-  <div class="brand wix-brand" onclick="showPage('home')">
-    <span class="brand-mark"><span class="only-en">HS</span><span class="only-zh nyushu-font">女书</span></span>
+  <div class="brand wix-brand site-brand" onclick="showPage('home')">
+    <span class="brand-logo-wrap" aria-hidden="true">
+      <img class="brand-logo-img" src="./11717.PNG" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';" />
+      <span class="brand-mark brand-fallback"><span class="only-en">HS</span><span class="only-zh nyushu-font">女书</span></span>
+    </span>
     <span class="only-en">HerScript Studio</span>
     <span class="only-zh">女书创意工作室</span>
   </div>
@@ -2206,11 +2410,11 @@ body.lang-zh .game-result{
     <span class="float-glyph">书写</span>
   </div><div class="wix-orb orb-one"></div><div class="wix-orb orb-two"></div>
   <div class="wix-home-content"><div class="wix-home-copy">
-    <div class="kicker wix-kicker"><span class="only-en">Digital heritage archive · Nüshu board game · Interactive storytelling</span><span class="only-zh">数字非遗档案 · 女书桌游 · 互动叙事</span></div>
-    <h1><span class="only-en">Nüshu Digital Heritage Studio</span><span class="only-zh">女书数字非遗体验馆</span></h1>
-    <p><span class="only-en">A digital cultural experience inspired by Nüshu, the rare women’s script from Jiangyong, Hunan. Through archive, stories, writing practice and interactive play, hidden women’s voices become visible again.</span><span class="only-zh">一个以湖南江永女书为灵感的数字文化体验项目。通过档案、故事、书写练习与互动游戏，让曾经隐秘的女性文字重新被看见。</span></p>
+    <div class="kicker wix-kicker"><span class="only-en">Nüshu learning website · Board game prototype · Interactive archive</span><span class="only-zh">女书学习网站 · 桌游原型 · 互动档案</span></div>
+    <h1><span class="only-en">HerScript Studio: Nüshu Cultural Learning Website</span><span class="only-zh">女书数字非遗体验馆</span></h1>
+    <p><span class="only-en">A self-designed cultural learning website about Nüshu, the women’s script from Jiangyong, Hunan. It combines selected background information, stories, writing practice, listening resources, and interactive play to help visitors understand the script and its social meaning.</span><span class="only-zh">一个关于湖南江永女书的自主设计核心知识网站。网站整合背景资料、故事、书写练习、聆听资源与互动游戏，帮助访客理解女书文字及其社会文化意义。</span></p>
     <div class="hero-actions wix-actions"><button class="btn primary wix-primary" onclick="showPage('learn')"><span class="only-en">Start Learning</span><span class="only-zh">开始学习</span></button><button class="btn secondary wix-secondary" onclick="showPage('play')"><span class="only-en">Start Playing</span><span class="only-zh">开始游戏</span></button></div>
-    <div class="wix-start-note"><span class="only-en">Begin with heritage. Read the archive, enter the story, and connect through play.</span><span class="only-zh">从非遗出发，阅读档案，进入故事，并在游戏中建立连结。</span></div>
+    <div class="wix-start-note"><span class="only-en">Start with a clear overview, then explore the dictionary, stories, practice tools, listening resources, and games.</span><span class="only-zh">从清晰概览开始，再进入字典、故事、临摹、聆听资源与互动游戏。</span></div>
     <div class="logic-strip" aria-label="Website journey">
       <span class="logic-chip"><i></i><span class="only-en">Home</span><span class="only-zh">首页</span></span>
       <span class="logic-chip"><i></i><span class="only-en">Learn</span><span class="only-zh">学习</span></span>
@@ -2219,10 +2423,10 @@ body.lang-zh .game-result{
     </div>
   </div><div class="wix-hero-preview">
     <div class="preview-seal"><span class="only-en">NÜ<br>SHU</span><span class="only-zh">女<br>书</span></div>
-    <div class="preview-topbar"><span></span><span></span><span></span></div><div class="preview-title"><span class="only-en">Nüshu Heritage Journey</span><span class="only-zh">女书非遗旅程</span></div>
-    <div class="preview-card large" onclick="showPage('play')"><b><span class="only-en">41-Cell Board Game</span><span class="only-zh">41格女书棋盘</span></b><small><span class="only-en">Culture · Events · Decisions · Sisterhood</span><span class="only-zh">文化 · 事件 · 决策 · 姐妹情谊</span></small></div>
-    <div class="preview-row"><div class="preview-card" onclick="showPage('learn')"><b><span class="only-en">Cards</span><span class="only-zh">卡牌</span></b><small><span class="only-en">Cultural learning</span><span class="only-zh">文化学习</span></small></div><div class="preview-card" onclick="showPage('learn')"><b><span class="only-en">Practice</span><span class="only-zh">临摹</span></b><small><span class="only-en">White-cloth writing</span><span class="only-zh">白布书写</span></small></div></div>
-    <div class="preview-card dark" onclick="showPage('play')"><b><span class="only-en">Start Digital Missions</span><span class="only-zh">开始数字任务</span></b><small><span class="only-en">Points, tasks and achievements</span><span class="only-zh">积分、任务与成就</span></small></div>
+    <div class="preview-topbar"><span></span><span></span><span></span></div><div class="preview-title"><span class="only-en">Nüshu Learning Journey</span><span class="only-zh">女书学习路径</span></div>
+    <div class="preview-card large" onclick="showPage('play')"><b><span class="only-en">41-Cell Board Game Prototype</span><span class="only-zh">41格女书桌游原型</span></b><small><span class="only-en">Culture · Events · Decisions · Sisterhood</span><span class="only-zh">文化 · 事件 · 决策 · 姐妹情谊</span></small></div>
+    <div class="preview-row"><div class="preview-card" onclick="showPage('learn')"><b><span class="only-en">Cards</span><span class="only-zh">卡牌</span></b><small><span class="only-en">Key concepts</span><span class="only-zh">核心知识</span></small></div><div class="preview-card" onclick="showPage('learn')"><b><span class="only-en">Practice</span><span class="only-zh">临摹</span></b><small><span class="only-en">Writing practice</span><span class="only-zh">书写练习</span></small></div></div>
+    <div class="preview-card dark" onclick="showPage('play')"><b><span class="only-en">Start Interactive Missions</span><span class="only-zh">开始互动任务</span></b><small><span class="only-en">Quizzes, points and achievements</span><span class="only-zh">问答、积分与成就</span></small></div>
   </div></div>
 
   <div class="home-film-feature" aria-label="AI Film feature on homepage">
@@ -2230,7 +2434,7 @@ body.lang-zh .game-result{
       <div>
         <div class="film-label"><span class="only-en">Film</span><span class="only-zh">AI短片</span></div>
         <h2><span class="only-en">Watch the invisible link come alive.</span><span class="only-zh">让看不见的连结在影像中显形。</span></h2>
-        <p><span class="only-en">This cinematic chapter transforms Nüshu into a visual story of memory, silence and response. It introduces the emotional core of HerScript Studio before visitors enter the learning and game experience.</span><span class="only-zh">这一电影章节将女书转化为关于记忆、沉默与回应的视觉叙事。它作为 HerScript Studio 的情感入口，引导观众进入后续的学习与游戏体验。</span></p>
+        <p><span class="only-en">This film section presents a creative interpretation of Nüshu themes such as memory, silence, and response. It works as an emotional introduction before visitors move into the learning and game sections.</span><span class="only-zh">短片部分以创意方式呈现女书中的记忆、沉默与回应主题，作为进入学习与游戏板块之前的情感导入。</span></p>
       </div>
       <div class="home-film-actions">
         <button class="home-film-btn" onclick="showPage('film')"><span class="only-en">Enter Film</span><span class="only-zh">进入短片</span></button>
@@ -2257,7 +2461,7 @@ body.lang-zh .game-result{
     <main>
 <!-- Archive/Product page merged into Learn to keep only four main categories. -->
       <section class="section page-view portal-page wix-learn-page" id="learn">
-  <div class="wix-page-hero split-clear"><div class="wix-page-copy"><div class="kicker dark-kicker"><span class="only-en">Learn</span><span class="only-zh">学习</span></div><h2><span class="only-en">Learn Nüshu through stories, symbols and writing.</span><span class="only-zh">通过故事、符号与书写学习女书。</span></h2><p><span class="only-en">This section combines the cultural cards, stories, dictionary, white-cloth practice and language lab, so the learning path feels clear and complete.</span><span class="only-zh">这一部分集中呈现文化卡、故事、字典、白布临摹与语言实验室，让学习路径更清楚完整。</span></p></div></div>
+  <div class="wix-page-hero split-clear"><div class="wix-page-copy"><div class="kicker dark-kicker"><span class="only-en">Learn</span><span class="only-zh">学习</span></div><h2><span class="only-en">Learn Nüshu through key words, stories, sound and practice.</span><span class="only-zh">通过词汇、故事、声音与练习学习女书。</span></h2><p><span class="only-en">This section organises the main learning tools: dictionary, cultural stories, cards, listening resources, writing practice, and a simple language lab.</span><span class="only-zh">这一部分集中整理主要学习工具：字典、文化故事、卡牌、聆听资源、书写练习与基础语言实验室。</span></p></div></div>
   <div class="archive-filter" aria-label="Nüshu learning categories">
     <button class="active" type="button" onclick="focusLearnDictionary()"><span class="only-en">Dictionary</span><span class="only-zh">字典</span></button>
     <button type="button" onclick="showPage('stories')"><span class="only-en">Stories</span><span class="only-zh">故事</span></button>
@@ -2289,11 +2493,11 @@ body.lang-zh .game-result{
           <div>
             <div class="kicker dark-kicker"><span class="only-en">Listen</span><span class="only-zh">聆听女歌</span></div>
             <h2><span class="only-en">Listen to Nüshu Songs.</span><span class="only-zh">聆听女歌。</span></h2>
-            <p><span class="only-en">Nüshu is not only a written script, but also a voice carried by women through singing, memory and response. These videos let visitors hear the emotional texture behind the characters.</span><span class="only-zh">女书不仅是一种文字，也是一种经由歌唱、记忆与回应传承的女性声音。通过这些视频，观众可以听见文字背后的情感质地。</span></p>
+            <p><span class="only-en">Nüshu was closely connected with local songs, oral expression, dialect, and women’s shared memory. These videos provide an audio entry point for visitors who want to understand the culture beyond written characters.</span><span class="only-zh">女书与地方歌唱、口头表达、方言和女性共同记忆密切相关。视频内容为访客提供文字之外的声音入口。</span></p>
           </div>
           <div class="listen-quote-card">
-            <b><span class="only-en">Before Nüshu was read, it was often heard.</span><span class="only-zh">女书被阅读之前，也曾在歌声中被听见。</span></b>
-            <span><span class="only-en">Songs preserve emotion, rhythm, dialect, sisterhood and lived memory.</span><span class="only-zh">歌声保存了情感、节奏、方言、姐妹情谊与生活记忆。</span></span>
+            <b><span class="only-en">Nüshu can be understood through both writing and sound.</span><span class="only-zh">女书既可以通过书写理解，也可以通过声音理解。</span></b>
+            <span><span class="only-en">Songs help preserve rhythm, dialect, emotion and community memory.</span><span class="only-zh">歌声帮助保存节奏、方言、情感与共同记忆。</span></span>
           </div>
         </div>
 
@@ -2335,8 +2539,8 @@ body.lang-zh .game-result{
         <div class="play-hero-ga">
           <div class="play-hero-copy">
             <div class="kicker"><span class="only-en">Interactive cultural play</span><span class="only-zh">文化互动体验</span></div>
-            <h2 class="ink-title-line"><span class="only-en">Play with Nüshu culture.</span><span class="only-zh">在互动中体验女书文化。</span></h2>
-            <p><span class="only-en">Discover Nüshu through puzzles, stories, writing practice and cultural challenges. Each game transforms hidden women’s writing into a playful journey of memory, language and connection.</span><span class="only-zh">通过拼图、故事、书写练习与文化挑战发现女书。每一个游戏都将女性隐秘文字转化为一段关于记忆、语言与连结的可玩旅程。</span></p>
+            <h2 class="ink-title-line"><span class="only-en">Explore Nüshu through interactive tasks.</span><span class="only-zh">通过互动任务了解女书文化。</span></h2>
+            <p><span class="only-en">This section uses quizzes, story tasks, writing practice and cultural challenges to make Nüshu learning more accessible and interactive.</span><span class="only-zh">这一部分通过问答、故事任务、书写练习与文化挑战，让女书学习更加直观、可参与。</span></p>
             <div class="play-hero-actions">
               <button class="play-primary-btn" onclick="showPage('games')"><span class="only-en">Play Now</span><span class="only-zh">立即开始</span></button>
               <button class="play-secondary-btn" onclick="showPage('about')"><span class="only-en">View Board Game</span><span class="only-zh">查看桌游</span></button>
@@ -2384,7 +2588,7 @@ body.lang-zh .game-result{
         <div class="play-game-grid">
           <article class="play-game-card" data-game-cat="board"><div class="game-type">Board Game</div><h3><span class="only-en">Nüshu Journey Board</span><span class="only-zh">女书人生之旅</span></h3><p><span class="only-en">Move across a 41-cell journey map and experience Nüshu through culture, events and decisions.</span><span class="only-zh">在 41 格旅程地图中前进，通过文化、事件与决策体验女书。</span></p><button onclick="showPage('about')"><span class="only-en">View map</span><span class="only-zh">查看棋盘</span></button></article>
           <article class="play-game-card" data-game-cat="puzzle trivia"><div class="game-type">Puzzle</div><h3><span class="only-en">Decode the Symbols</span><span class="only-zh">解码女书字符</span></h3><p><span class="only-en">Match Nüshu characters with meanings and discover the emotions behind each symbol.</span><span class="only-zh">将女书字符与含义配对，发现每个符号背后的情感。</span></p><button onclick="showPage('games')"><span class="only-en">Play mission</span><span class="only-zh">进入任务</span></button></article>
-          <article class="play-game-card" data-game-cat="writing"><div class="game-type">Writing</div><h3><span class="only-en">White Cloth Writing</span><span class="only-zh">白布书写练习</span></h3><p><span class="only-en">Trace and write Nüshu characters on a digital white cloth inspired by intimate women’s writing practices.</span><span class="only-zh">在数字白布上临摹女书，回应女性私密书写的传统。</span></p><button onclick="showPage('practice')"><span class="only-en">Try writing</span><span class="only-zh">开始书写</span></button></article>
+          <article class="play-game-card" data-game-cat="writing"><div class="game-type">Writing</div><h3><span class="only-en">White Cloth Writing</span><span class="only-zh">书写练习练习</span></h3><p><span class="only-en">Trace and write Nüshu characters on a digital white cloth inspired by intimate women’s writing practices.</span><span class="only-zh">在数字白布上临摹女书，回应女性私密书写的传统。</span></p><button onclick="showPage('practice')"><span class="only-en">Try writing</span><span class="only-zh">开始书写</span></button></article>
           <article class="play-game-card" data-game-cat="story puzzle"><div class="game-type">Story</div><h3><span class="only-en">Story Fragments</span><span class="only-zh">故事碎片</span></h3><p><span class="only-en">Rebuild women’s stories through scattered memories, letters and emotional clues.</span><span class="only-zh">通过散落的记忆、书信与情感线索，重新拼合女性故事。</span></p><button onclick="showPage('stories')"><span class="only-en">Enter stories</span><span class="only-zh">进入故事</span></button></article>
           <article class="play-game-card" data-game-cat="decision story"><div class="game-type">Decision</div><h3><span class="only-en">Laotong Decision</span><span class="only-zh">老同决策</span></h3><p><span class="only-en">Make choices alone or with a partner, reflecting trust and mutual support between sworn sisters.</span><span class="only-zh">独自或与伙伴共同做选择，体现老同之间的信任与支持。</span></p><button onclick="showPage('games')"><span class="only-en">Choose path</span><span class="only-zh">选择路径</span></button></article>
           <article class="play-game-card" data-game-cat="trivia"><div class="game-type">Trivia</div><h3><span class="only-en">Cultural Quiz</span><span class="only-zh">女书文化问答</span></h3><p><span class="only-en">Test your knowledge of Nüshu history, symbols, rituals and women’s cultural memory.</span><span class="only-zh">测试你对女书历史、符号、仪式与女性文化记忆的了解。</span></p><button onclick="showPage('culture')"><span class="only-en">Learn cards</span><span class="only-zh">查看卡牌</span></button></article>
@@ -2402,7 +2606,10 @@ body.lang-zh .game-result{
       <section class="section page-view" id="film">
         <div class="section-head">
           <h2>FILM /<br>短片</h2>
-          <p>The film section presents Nüshu as a cinematic narrative of silence, memory, and response. It does not simply explain history, but imagines how women across time continue to answer one another.<br>短片部分将女书呈现为一个关于沉默、记忆与回应的电影叙事。它并非简单讲述历史，而是试图想象：跨越时间，女性如何仍在彼此回应。</p>
+          <p>
+            <span class="only-en"><strong>The Invisible Link: Her Voice Across Time</strong> is an AI-generated short film inspired by Nüshu, the women’s script from Jiangyong, China. The film uses poetic visuals and quiet narration to explore memory, silence, emotional support, and the connection between women across time.</span>
+            <span class="only-zh"><strong>《看不见的连结：她的声音穿越时间》</strong>是一部以中国江永女书为灵感创作的 AI 短片。影片通过诗性影像与安静旁白，探索记忆、沉默、情感支持，以及女性之间跨越时间的连接。</span>
+          </p>
         </div>
         <div class="film-stage">
           <div class="panel">
@@ -2410,10 +2617,18 @@ body.lang-zh .game-result{
             <div class="video-placeholder">VIDEO TRAILER AREA</div>
           </div>
           <div class="panel">
-            <div class="panel-title">Project Note / 项目说明</div>
+            <div class="panel-title">Film Introduction / 短片介绍</div>
             <div style="line-height:1.95;color:#625a54">
-              This section keeps the cinematic entry point of your project. You can later replace this block with your real film embed or trailer player.<br>
-              这里保留电影感入口，后续可直接替换成你的短片播放器。
+              <div class="only-en">
+                <p><em>The Invisible Link</em> is an AI-generated short film inspired by Nüshu, a rare writing system created and used by women in Jiangyong, China. Rather than simply introducing Nüshu as a historical script, the film explores the emotional meaning behind it: how women used writing to express loneliness, courage, memory, and support when their voices were often unheard.</p>
+                <p>The film connects past and present through two female characters from different times. One lives in a traditional world where women’s voices are restricted; the other is a modern girl facing pressure, competition, and self-doubt. Across time, a Nüshu letter becomes an invisible bridge between them.</p>
+                <p>Through poetic visuals, quiet narration, and AI-generated cinematic scenes, the film asks how forgotten female voices can be remembered in the digital age. It presents Nüshu not only as cultural heritage, but also as a symbol of connection, empathy, and women supporting women.</p>
+              </div>
+              <div class="only-zh">
+                <p>《看不见的连结：她的声音穿越时间》是一部以女书文化为灵感创作的 AI 短片。女书是中国江永地区女性创造并使用的独特文字系统。本片并不只是介绍女书这种古老文字，而是希望探索女书背后的情感意义：在女性声音常常被忽视的时代，她们如何通过书写表达孤独、勇气、记忆与彼此支持。</p>
+                <p>影片通过两个不同时代的女性角色，将过去与当下连接起来。一位生活在传统社会中，面对女性表达受限的处境；另一位是现代女孩，在竞争、压力与自我怀疑中寻找力量。跨越时间，一封女书信成为她们之间看不见的桥梁。</p>
+                <p>通过诗性的影像、安静的旁白和 AI 生成的电影化场景，影片思考在数字时代中如何重新看见那些被遗忘的女性声音。它呈现的女书不仅是一种文化遗产，更是一种关于连接、共情与女性互助的精神象征。</p>
+              </div>
             </div>
           </div>
         </div>
@@ -2422,7 +2637,7 @@ body.lang-zh .game-result{
       <section class="section page-view" id="stories">
         <div class="section-head">
           <h2>Stories /<br>故事</h2>
-          <p>Each story card opens a fragment of women’s history shaped by longing, resilience, ritual, and companionship. Together, these stories reveal Nüshu as both a script and a shared emotional world.<br>每一张故事卡都打开了一段由思念、韧性、仪式与陪伴所构成的女性历史片段。这些故事共同揭示出：女书不仅是一种文字，也是一整个女性共享的情感世界。</p>
+          <p>Each story card introduces a selected cultural scene related to Nüshu, including communication, learning, ritual, daily life and mutual support. Together, they show how the script functioned within women’s social relationships.<br>每一张故事卡介绍一个与女书相关的文化场景，包括通信、学习、仪式、日常生活与互助关系。这些故事共同说明女书如何存在于女性的社会关系之中。</p>
         </div>
 
         <div style="font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px">Story Covers / 故事封面</div>
@@ -2447,7 +2662,7 @@ body.lang-zh .game-result{
       <section class="section page-view" id="language">
         <div class="section-head">
           <h2>Dictionary /<br>字典</h2>
-          <p>The dictionary section translates selected Nüshu-related words into image and meaning. It invites viewers to read not only with the eyes, but through feeling, memory, and association.<br>字典部分将部分与女书相关的词汇转译为图像与意义。它邀请观看者不仅用眼睛阅读，也通过情感、记忆与联想去理解文字。</p>
+          <p>The dictionary presents selected Nüshu-related words with image references, Chinese meanings, English explanations and pinyin where available. It is designed as a simple entry point rather than a complete academic dictionary.<br>字典部分展示部分女书相关词汇，包含图像参考、中文含义、英文解释与拼音信息。它是一个基础学习入口，并非完整学术字典。</p>
         </div>
         <input class="input" id="dictSearch" placeholder="Search by English / Chinese / Pinyin · 按英文 / 中文 / 拼音搜索" style="margin-bottom:16px" />
         <div class="dict-grid" id="dictGrid"></div>
@@ -2455,8 +2670,8 @@ body.lang-zh .game-result{
 
       <section class="section page-view" id="practice">
         <div class="section-head">
-          <h2>Practice /<br>临摹与白布书写</h2>
-          <p>Practice Nüshu writing on a digital white cloth. A light reference character remains underneath, while you can truly write on top with your mouse or finger.<br>在数字白布上练习女书书写。下方保留淡淡的临摹参考字，用户可以用鼠标或手指真正写在上面。</p>
+          <h2>Practice /<br>临摹与书写练习</h2>
+          <p>Use the digital white cloth to practise selected Nüshu-style characters. The light reference image can be shown or hidden, and users can write with a mouse or touch screen.<br>使用数字白布练习部分女书风格文字。淡色参考图可以显示或隐藏，用户可用鼠标或触摸屏进行书写。</p>
         </div>
         <div class="practice-grid">
           <div class="practice-card">
@@ -2468,7 +2683,7 @@ body.lang-zh .game-result{
             <div class="practice-note">Look at the prompt and trace over the light reference on the white cloth. You can also hide the reference and write freely.<br>观察左侧提示，在右侧白布上的淡色参考字上临摹；也可以隐藏参考字后自由书写。</div>
           </div>
           <div class="practice-card">
-            <div class="panel-title">White Cloth Canvas / 白布书写</div>
+            <div class="panel-title">White Cloth Canvas / 书写练习</div>
             <div class="cloth-practice-wrap">
               <img id="traceTemplate" class="trace-template" src="女书“你”.png" alt="临摹参考">
               <canvas class="trace cloth-canvas" id="traceCanvas"></canvas>
@@ -2485,7 +2700,7 @@ body.lang-zh .game-result{
       <section class="section page-view" id="lab">
         <div class="section-head">
           <h2>Language Lab /<br>实验室</h2>
-          <p>The Language Lab turns Nüshu into an interactive system of translation, input, and expression. It bridges historical writing and contemporary interfaces, allowing hidden language to become visible again.<br>语言实验室将女书转化为一个可互动的翻译、输入与表达系统。它连接了历史书写与当代界面，使原本隐秘的语言重新获得可见性。</p>
+          <p>The Language Lab is an experimental interface for basic word matching, input and visual output. It is designed for learning and demonstration, not for full or authoritative translation.<br>语言实验室是用于基础词汇匹配、输入与图像输出的实验界面。它用于学习展示，并非完整或权威翻译系统。</p>
         </div>
         <div class="lab-grid">
           <div class="panel">
@@ -2525,7 +2740,7 @@ body.lang-zh .game-result{
       <section class="section page-view" id="games">
         <div class="section-head">
           <h2>Games /<br>女书挑战</h2>
-          <p>A mission-hall style game page. Select a challenge from the Nüshu journey map, complete clickable tasks, earn points, and unlock achievements.<br>任务大厅式游戏页面。点击左侧女书旅程地图中的关卡，完成可点击任务、获得积分并解锁成就。</p>
+          <p>A mission-style game page for reviewing selected Nüshu knowledge. Visitors can choose tasks, answer questions, earn points and unlock achievements.<br>任务式游戏页面，用于复习部分女书知识。访客可以选择任务、回答问题、获得积分并解锁成就。</p>
         </div>
 
         <div class="game-dashboard">
@@ -2569,35 +2784,116 @@ body.lang-zh .game-result{
         </div>
       </section>
 
-      <section class="section page-view" id="about">
-        <div class="section-head">
-          <h2>About /<br>关于项目</h2>
-          <p>Nüshu began as a hidden language between women. Here, it becomes a visible space of memory, voice, and connection.<br>女书曾是女性之间的隐秘语言，而在这里，它成为一个可被看见的记忆、声音与连结空间。</p>
-        </div>
-        <div class="panel">
-          HerScript Studio is an independent creative project that brings together AI film, digital storytelling, cultural memory, interactive games, and a physical board-game extension. Centered on Nüshu, it transforms women’s hidden writing into a contemporary visual and interactive language.<br>
-          HerScript Studio 是一个独立创作项目，融合了 AI 电影、数字叙事、文化记忆、互动游戏与实体桌游拓展。项目以女书为核心，将女性隐秘的书写传统转化为一种当代的视觉与互动语言。
-        </div>
-        <div class="font-sample-strip">
-          <b class="only-en">Memory · Voice · Sisterhood · Writing</b>
-          <b class="only-zh nyushu-font">记忆 · 声音 · 姐妹 · 书写</b>
-          <span class="only-en">Decorative typeface layer prepared for Nyushu Firmia / FengQi. Upload the font files to /fonts to activate the full effect.</span>
-          <span class="only-zh">已为女书梧桐 / 女书凤栖预留装饰字体层。将字体文件上传到 /fonts 文件夹后，中文装饰字会自动呈现更强的女书风格。</span>
+      <section class="section page-view company-about-page" id="about">
+        <div class="about-company-hero">
+          <div>
+            <div class="about-eyebrow"><span class="only-en">About HerScript Studio</span><span class="only-zh">关于 HerScript Studio</span></div>
+            <h2><span class="only-en">A cultural learning studio for Nüshu, storytelling and interactive heritage.</span><span class="only-zh">一个面向女书、故事叙事与互动文化学习的创意工作室。</span></h2>
+          </div>
+          <div class="about-hero-card">
+            <img src="11717.PNG" alt="HerScript Studio logo" class="about-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="about-logo-fallback" style="display:none;">HS</div>
+            <p><span class="only-en">HerScript Studio is an independent student-led cultural design project. It presents Nüshu through a bilingual website, digital learning tools, visual storytelling and a board-game prototype.</span><span class="only-zh">HerScript Studio 是一个学生主导的独立文化设计项目，通过双语网站、数字学习工具、视觉叙事与桌游原型介绍女书。</span></p>
+          </div>
         </div>
 
-        <div class="board-extension">
-          <div class="board-map-preview">
-            <div class="panel-title">Nüshu Journey Board / 女书人生之旅棋盘</div>
-            <p style="margin:0;color:#6a625c;line-height:1.85;font-size:13px">A 41-cell circular journey inspired by Nüshu life stories. Players move through culture, events, decisions, memory, writing, sisterhood, and rebirth.<br>一套以女书女性生命叙事为灵感的 41 格循环棋盘。玩家在文化、事件、决策、记忆、书写、姐妹情谊与重生之间前行。</p>
-            <div class="board-map-grid" id="boardMapPreview"></div>
-            <div class="board-info-box" id="boardInfoBox">Click a board cell to see its narrative meaning.<br>点击任意棋盘格，查看其叙事含义。</div>
+        <div class="about-overview-grid">
+          <div class="about-stat-card">
+            <span>01</span>
+            <b><span class="only-en">Cultural Focus</span><span class="only-zh">文化主题</span></b>
+            <p><span class="only-en">Nüshu, the women’s script from Jiangyong, Hunan, and the social meanings connected with women’s expression, memory and mutual support.</span><span class="only-zh">聚焦湖南江永女书，以及它所承载的女性表达、记忆传递与互助关系。</span></p>
           </div>
-          <div class="panel">
-            <div class="panel-title">Board Game Extension / 桌游拓展</div>
-            <h3 style="margin:0 0 10px;font-size:28px;line-height:1.05;letter-spacing:-.5px">NÜSHU MONOPOLY-STYLE BOARD GAME / 女书大富翁</h3>
-            <p style="margin:0;color:#625b55;line-height:1.95;font-size:14px">This project extends into a physical board game that turns Nüshu culture into a playable journey. The board contains 41 connected cells, including Cultural Cards, Event Cards, Decision Cards, and digital website tasks. Players learn Nüshu symbols, encounter women’s life stories, make emotional choices, and build invisible links with others through gameplay.<br><br>本项目延伸为一套实体桌游，将女书文化转化为可玩的生命旅程。棋盘由 41 个连续格组成，包含文化卡、事件卡、决策卡与网站互动任务。玩家在游戏中开始学习符号，进入女性生命故事，做出情感选择，并与他人建立“看不见的连结”。</p>
-            <div class="board-tag-row"><span class="board-tag">41 Cells</span><span class="board-tag">Cultural Cards</span><span class="board-tag">Event Cards</span><span class="board-tag">Decision Cards</span><span class="board-tag">Website Tasks</span></div>
-            <div class="donate-actions" style="margin-top:18px"><button class="donate-btn" onclick="showPage('games')">Play Digital Challenges / 进入挑战</button><button class="donate-btn light" onclick="showPage('culture')">View Cultural Cards / 查看文化卡</button></div>
+          <div class="about-stat-card">
+            <span>02</span>
+            <b><span class="only-en">Project Format</span><span class="only-zh">项目形式</span></b>
+            <p><span class="only-en">A bilingual website supported by stories, a dictionary, tracing practice, listening resources, interactive games and a physical board-game concept.</span><span class="only-zh">以双语网站为核心，结合故事、字典、临摹、聆听资源、互动游戏与实体桌游概念。</span></p>
+          </div>
+          <div class="about-stat-card">
+            <span>03</span>
+            <b><span class="only-en">Learning Aim</span><span class="only-zh">学习目标</span></b>
+            <p><span class="only-en">To make Nüshu easier to access for young audiences while keeping the presentation respectful, clear and culturally grounded.</span><span class="only-zh">让年轻受众更容易接触女书，同时保持表达的尊重性、清晰性与文化依据。</span></p>
+          </div>
+        </div>
+
+        <div class="about-section-block">
+          <div class="about-section-title">
+            <span class="only-en">What We Do</span><span class="only-zh">项目内容</span>
+          </div>
+          <div class="about-service-grid">
+            <button class="about-service-card" onclick="showPage('learn')">
+              <small>Learning Website</small>
+              <strong><span class="only-en">Structured cultural introduction</span><span class="only-zh">结构化文化介绍</span></strong>
+              <p><span class="only-en">The website organises selected information about Nüshu into clear learning sections, including background, stories, writing practice and listening resources.</span><span class="only-zh">网站将女书相关资料整理为清晰的学习板块，包括背景知识、故事、书写练习与聆听资源。</span></p>
+            </button>
+            <button class="about-service-card" onclick="showPage('stories')">
+              <small>Storytelling</small>
+              <strong><span class="only-en">Human-centred cultural stories</span><span class="only-zh">以人为中心的文化故事</span></strong>
+              <p><span class="only-en">The story section uses concise narratives to explain how Nüshu was connected with daily life, friendship, marriage, memory and emotional expression.</span><span class="only-zh">故事板块以简洁叙事说明女书与日常生活、友谊、婚嫁、记忆和情感表达之间的联系。</span></p>
+            </button>
+            <button class="about-service-card" onclick="showPage('games')">
+              <small>Interactive Play</small>
+              <strong><span class="only-en">Learning through participation</span><span class="only-zh">通过参与进行学习</span></strong>
+              <p><span class="only-en">Digital tasks and board-game ideas help visitors review knowledge through questions, decisions, memory games and simple symbolic exercises.</span><span class="only-zh">数字任务与桌游概念帮助访客通过问答、决策、记忆配对和符号练习复习知识。</span></p>
+            </button>
+          </div>
+        </div>
+
+        <div class="about-two-column">
+          <div class="about-dark-panel">
+            <div class="panel-title"><span class="only-en">Mission</span><span class="only-zh">项目使命</span></div>
+            <h3><span class="only-en">To help young audiences encounter cultural heritage as something they can understand, discuss and experience.</span><span class="only-zh">帮助年轻受众以可理解、可讨论、可体验的方式接触文化遗产。</span></h3>
+            <p><span class="only-en">This project does not aim to replace academic research or official museum archives. Instead, it acts as an accessible entry point: a designed learning experience that encourages curiosity, empathy and further exploration.</span><span class="only-zh">本项目并不替代学术研究或官方博物馆档案，而是作为一个易进入的学习入口：通过设计化体验激发好奇、共情与进一步探索。</span></p>
+          </div>
+          <div class="about-values-panel">
+            <div class="panel-title"><span class="only-en">Values</span><span class="only-zh">核心价值</span></div>
+            <div class="about-value-row"><b>Culture</b><span><span class="only-en">Present heritage with context and care.</span><span class="only-zh">在具体语境中谨慎呈现文化。</span></span></div>
+            <div class="about-value-row"><b>Clarity</b><span><span class="only-en">Make information readable and organised.</span><span class="only-zh">让信息更易读、更有结构。</span></span></div>
+            <div class="about-value-row"><b>Empathy</b><span><span class="only-en">Focus on human experience behind the script.</span><span class="only-zh">关注文字背后的人与情感经验。</span></span></div>
+            <div class="about-value-row"><b>Participation</b><span><span class="only-en">Turn learning into an active experience.</span><span class="only-zh">把学习转化为主动参与的体验。</span></span></div>
+          </div>
+        </div>
+
+        <div class="about-section-block">
+          <div class="about-section-title">
+            <span class="only-en">Product Extension</span><span class="only-zh">产品延展</span>
+          </div>
+          <div class="board-extension mature-board-extension">
+            <div class="board-map-preview">
+              <div class="panel-title">Nüshu Journey Board / 女书人生之旅棋盘</div>
+              <p style="margin:0;color:#6a625c;line-height:1.85;font-size:13px"><span class="only-en">A 41-cell circular journey inspired by selected Nüshu life stories. Players move through culture, events, decisions, memory, writing and sisterhood.</span><span class="only-zh">一套以女书女性生命叙事为灵感的 41 格循环棋盘。玩家在文化、事件、决策、记忆、书写与姐妹情谊之间前行。</span></p>
+              <div class="board-map-grid" id="boardMapPreview"></div>
+              <div class="board-info-box" id="boardInfoBox"><span class="only-en">Click a board cell to see its narrative meaning.</span><span class="only-zh">点击任意棋盘格，查看其叙事含义。</span></div>
+            </div>
+            <div class="panel about-product-panel">
+              <div class="panel-title"><span class="only-en">Board Game Prototype</span><span class="only-zh">桌游原型</span></div>
+              <h3>Nüshu Monopoly</h3>
+              <p><span class="only-en">The physical board-game prototype turns selected cultural knowledge into a playable journey. It includes a circular board, Culture Cards, Event Cards, Decision Cards and website-linked tasks. The aim is to support learning through conversation, decision-making and shared play.</span><span class="only-zh">实体桌游原型将部分女书文化知识转化为可玩的旅程，包括圆形棋盘、文化卡、事件卡、决策卡和网站联动任务。其目标是通过交流、决策和共同游戏支持学习。</span></p>
+              <div class="board-tag-row"><span class="board-tag">41 Cells</span><span class="board-tag">Culture Cards</span><span class="board-tag">Event Cards</span><span class="board-tag">Decision Cards</span><span class="board-tag">Website Tasks</span></div>
+              <div class="donate-actions" style="margin-top:18px"><button class="donate-btn" onclick="showPage('games')"><span class="only-en">Try Digital Challenges</span><span class="only-zh">进入数字挑战</span></button><button class="donate-btn light" onclick="showPage('culture')"><span class="only-en">View Cultural Cards</span><span class="only-zh">查看文化卡</span></button></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-section-block about-process-block">
+          <div class="about-section-title">
+            <span class="only-en">Development Process</span><span class="only-zh">开发流程</span>
+          </div>
+          <div class="about-process-grid">
+            <div><span>01</span><b><span class="only-en">Research</span><span class="only-zh">调研</span></b><p><span class="only-en">Collecting background information and identifying key cultural themes.</span><span class="only-zh">收集背景资料，梳理核心文化主题。</span></p></div>
+            <div><span>02</span><b><span class="only-en">Design</span><span class="only-zh">设计</span></b><p><span class="only-en">Building the visual system, page structure, learning modules and game materials.</span><span class="only-zh">建立视觉系统、页面结构、学习模块与游戏材料。</span></p></div>
+            <div><span>03</span><b><span class="only-en">Prototype</span><span class="only-zh">原型</span></b><p><span class="only-en">Testing website functions, card content and board-game interaction.</span><span class="only-zh">测试网站功能、卡牌内容与桌游互动方式。</span></p></div>
+            <div><span>04</span><b><span class="only-en">Refine</span><span class="only-zh">优化</span></b><p><span class="only-en">Improving clarity, readability and user experience based on feedback.</span><span class="only-zh">根据反馈提升清晰度、可读性与用户体验。</span></p></div>
+          </div>
+        </div>
+
+        <div class="about-contact-band">
+          <div>
+            <div class="panel-title"><span class="only-en">Collaboration</span><span class="only-zh">合作方向</span></div>
+            <h3><span class="only-en">Open to education, exhibition, cultural learning and youth entrepreneurship contexts.</span><span class="only-zh">面向教育、展览、文化学习与青年创业场景开放合作。</span></h3>
+          </div>
+          <div class="about-contact-actions">
+            <button class="donate-btn" onclick="openDonateModal()"><span class="only-en">Support / Collaborate</span><span class="only-zh">支持 / 合作</span></button>
+            <button class="donate-btn light" onclick="showPage('home')"><span class="only-en">Back to Home</span><span class="only-zh">返回首页</span></button>
           </div>
         </div>
       </section>
@@ -3482,7 +3778,7 @@ body.lang-zh .game-result{
       setTimeout(()=>introOverlay.remove(),1000);
     },7600);
 
-    /* Practice cloth writing + board game preview / 白布书写与桌游预览 */
+    /* Practice cloth writing + board game preview / 书写练习与桌游预览 */
     let traceTemplateVisible = true;
     function updateTraceTemplate(){
       const template = document.getElementById('traceTemplate');
