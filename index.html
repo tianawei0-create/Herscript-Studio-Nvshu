@@ -2679,6 +2679,206 @@ body.lang-en .home-language-switch button:first-child,body.lang-zh .home-languag
   #order .order-buttons{display:grid !important;grid-template-columns:1fr !important;}
   #order .order-buttons button{width:100%;}
 }
+
+
+/* ===== Better quantity pricing layout / 数量累计价格与版式优化 ===== */
+#order .price-quantity-card{
+  grid-column:1 / -1 !important;
+  display:grid !important;
+  grid-template-columns:minmax(260px,.85fr) minmax(190px,.55fr) minmax(300px,1fr) !important;
+  gap:18px !important;
+  align-items:stretch !important;
+  padding:22px !important;
+  border-radius:24px !important;
+  background:linear-gradient(135deg,#fffaf6 0%,#fff2ea 100%) !important;
+  border:1px solid rgba(166,97,86,.18) !important;
+  box-shadow:0 14px 34px rgba(110,73,58,.06) !important;
+}
+#order .quantity-left,
+#order .quantity-custom,
+#order .price-summary-card{
+  min-height:150px;
+}
+#order .quantity-left{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+#order .quantity-title{
+  grid-column:auto !important;
+  margin-bottom:12px !important;
+  color:#94584e !important;
+}
+#order .quantity-options{
+  display:grid !important;
+  grid-template-columns:repeat(4,minmax(58px,1fr)) !important;
+  gap:12px !important;
+  margin:0 !important;
+}
+#order .quantity-options button{
+  height:62px !important;
+  border-radius:20px !important;
+  font-size:20px !important;
+}
+#order .quantity-custom{
+  display:flex !important;
+  flex-direction:column;
+  justify-content:space-between;
+  padding:0 !important;
+}
+#order .quantity-custom input{
+  height:62px !important;
+  font-size:18px !important;
+  font-weight:900 !important;
+}
+#order .price-summary-card{
+  display:flex !important;
+  flex-direction:column;
+  justify-content:center;
+  gap:10px;
+  padding:18px 20px !important;
+  border-radius:22px !important;
+  background:#fffdf9 !important;
+  border:1px dashed rgba(166,97,86,.26) !important;
+  color:#6f5d54 !important;
+}
+#order .price-line{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+  font-size:14px;
+  line-height:1.4;
+}
+#order .price-line strong{
+  color:#3b2b25;
+  font-size:18px;
+  white-space:nowrap;
+}
+#order .price-line.total{
+  padding-top:12px;
+  margin-top:4px;
+  border-top:1px solid rgba(166,97,86,.18);
+  font-weight:900;
+  color:#94584e;
+}
+#order .price-line.total strong{
+  font-size:28px;
+  color:#a66156;
+}
+#order .price-summary-card p{
+  margin:4px 0 0;
+  color:#7a6258;
+  font-size:12px;
+  line-height:1.55;
+}
+#order .order-form-grid{
+  align-items:start !important;
+}
+@media (max-width:1180px){
+  #order .price-quantity-card{grid-template-columns:1fr 1fr !important;}
+  #order .price-summary-card{grid-column:1 / -1;}
+}
+@media (max-width:700px){
+  #order .price-quantity-card{grid-template-columns:1fr !important;padding:18px !important;}
+  #order .quantity-left,#order .quantity-custom,#order .price-summary-card{min-height:auto;}
+  #order .quantity-options{grid-template-columns:repeat(4,1fr) !important;}
+  #order .quantity-options button{height:54px !important;font-size:18px !important;}
+  #order .price-line.total strong{font-size:24px;}
+}
+
+
+
+/* ===== Simplified Stripe payment area: only one payment button ===== */
+.single-pay-action{
+  display:flex!important;
+  justify-content:center!important;
+  align-items:center!important;
+  margin-top:24px!important;
+}
+.stripe-only-button{
+  width:min(100%, 520px)!important;
+  min-height:58px!important;
+  font-size:15px!important;
+  letter-spacing:.8px!important;
+  border-radius:999px!important;
+  box-shadow:0 18px 38px rgba(157,94,81,.18)!important;
+}
+.order-payment-note{display:none!important;}
+@media (max-width:760px){
+  .stripe-only-button{width:100%!important;min-height:56px!important;}
+}
+
+/* Final order button cleanup: only one Stripe payment button */
+#order .order-buttons.stripe-button-only{
+  display:flex!important;
+  justify-content:flex-start!important;
+  gap:0!important;
+  margin-top:18px!important;
+}
+#order .order-buttons.stripe-button-only .pay-online-single{
+  min-width:220px!important;
+  height:52px!important;
+  padding:0 28px!important;
+  border-radius:999px!important;
+  border:1px solid #a66156!important;
+  background:linear-gradient(135deg,#a66156,#d58e78)!important;
+  color:#fff!important;
+  font-weight:900!important;
+  box-shadow:0 12px 30px rgba(166,97,86,.18)!important;
+}
+#order .order-buttons.stripe-button-only .pay-online-single:hover{
+  transform:translateY(-2px);
+  box-shadow:0 16px 36px rgba(166,97,86,.24)!important;
+}
+@media(max-width:700px){
+  #order .order-buttons.stripe-button-only .pay-online-single{width:100%!important;}
+}
+
+
+
+/* Stripe quantity reminder / Stripe 数量提醒 */
+.stripe-quantity-reminder{
+  margin:14px 0 0;
+  padding:15px 18px;
+  border-radius:20px;
+  background:linear-gradient(135deg,#fff7f1,#f7e7dd);
+  border:1px dashed rgba(169,96,82,.35);
+  color:#74584f;
+  font-size:14px;
+  line-height:1.75;
+  font-weight:700;
+}
+.stripe-quantity-reminder strong{color:#9f554a;}
+.stripe-button-only{display:flex;flex-direction:column;align-items:flex-start;gap:12px;}
+.pay-online-single .pay-note{display:block;font-size:12px;font-weight:700;opacity:.9;margin-top:3px;letter-spacing:0;text-transform:none;}
+@media (max-width:720px){.stripe-button-only{align-items:stretch}.pay-online-single{width:100%;}.stripe-quantity-reminder{font-size:13px;}}
+
+
+
+/* ===== Direct usable Support interface / 可直接使用的支持界面 ===== */
+.support-direct-sheet{background:linear-gradient(180deg,#fffaf2 0%,#f7eadf 100%)!important;color:#3a2b25!important;}
+.support-direct-hero{display:grid;grid-template-columns:1fr 280px;gap:24px;align-items:end;margin-bottom:24px;padding-bottom:22px;border-bottom:1px solid rgba(156,96,78,.14);}
+.support-eyebrow{font-size:12px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;color:#a56a5b;margin-bottom:10px;}
+.support-direct-hero h2{margin:0;font-family:"Cormorant Garamond", Georgia, "Noto Serif SC", serif;font-size:clamp(42px,6vw,76px);line-height:.92;letter-spacing:-1.6px;color:#7c2d25;}
+.support-direct-hero h2 span{color:#bf7b70;}
+.support-direct-hero p{margin:16px 0 0;max-width:760px;color:#6d5d54;font-size:14px;line-height:1.9;}
+.support-quick-card{border:1px solid rgba(156,96,78,.12);border-radius:24px;background:rgba(255,255,255,.72);padding:20px;box-shadow:0 16px 36px rgba(90,57,45,.08);}
+.support-quick-card b{display:block;font-size:20px;letter-spacing:-.3px;margin-bottom:8px;color:#4a332d;}.support-quick-card span,.support-quick-card a{display:block;color:#84665c;font-size:13px;line-height:1.7;word-break:break-word;}
+.support-direct-grid{display:grid;grid-template-columns:1.05fr 1.1fr .85fr;gap:18px;align-items:stretch;}
+.support-direct-card{border:1px solid rgba(156,96,78,.12);border-radius:28px;background:rgba(255,253,249,.86);padding:24px;box-shadow:0 16px 40px rgba(90,57,45,.07);}
+.support-card-head small{display:block;color:#a66c5f;font-size:11px;font-weight:900;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:10px;}
+.support-card-head h3{margin:0 0 12px;font-size:28px;line-height:1;letter-spacing:-.7px;color:#4b332d;}
+.support-direct-card p{margin:0 0 18px;color:#706057;font-size:13px;line-height:1.85;}
+.support-qr-wrap{display:grid;grid-template-columns:132px 1fr;gap:16px;align-items:center;padding:14px;border:1px dashed rgba(166,108,95,.28);border-radius:22px;background:#fff9f2;margin:16px 0;}
+.support-qr-wrap img{width:132px;height:132px;object-fit:contain;border-radius:14px;background:#fff;border:1px solid rgba(156,96,78,.12);}
+.support-qr-wrap b{display:block;color:#573b34;margin-bottom:6px;}.support-qr-wrap span{display:block;color:#806b61;font-size:13px;line-height:1.6;}
+.support-action-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;}.support-primary-btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 18px;border-radius:999px;border:0;background:linear-gradient(135deg,#9f5a4e,#d58e78);color:#fff!important;font-size:13px;font-weight:900;cursor:pointer;box-shadow:0 14px 30px rgba(159,90,78,.18);text-decoration:none;}
+.support-message-form{display:grid;gap:12px;margin-top:12px;}.support-message-form label{display:grid;gap:7px;color:#725a50;font-size:12px;font-weight:900;letter-spacing:.5px;text-transform:uppercase;}.support-message-form input,.support-message-form textarea,.support-message-form select{width:100%;border:1px solid rgba(156,96,78,.14);border-radius:16px;background:#fffdfa;padding:13px 14px;font:inherit;font-size:14px;color:#332822;outline:none;}.support-message-form textarea{min-height:112px;resize:vertical;}.support-message-form input:focus,.support-message-form textarea:focus,.support-message-form select:focus{border-color:#c98473;box-shadow:0 0 0 4px rgba(201,132,115,.14);}
+.support-link-list{display:grid;gap:12px;}.support-link-list a,.support-link-list button{display:block;width:100%;text-align:left;border:1px solid rgba(156,96,78,.12);border-radius:18px;background:#fffaf5;padding:15px 16px;cursor:pointer;color:#4a332d;text-decoration:none;}.support-link-list b{display:block;font-size:13px;letter-spacing:.7px;text-transform:uppercase;color:#7c3b33;margin-bottom:4px;}.support-link-list span{display:block;color:#756159;font-size:13px;line-height:1.55;word-break:break-word;}.support-separation-note{margin-top:16px;padding:14px;border-radius:18px;background:#f6e7df;color:#755d54;font-size:13px;line-height:1.75;}.support-separation-note b{color:#8c3f36;}
+@media (max-width:1120px){.support-direct-hero,.support-direct-grid{grid-template-columns:1fr;}.support-quick-card{max-width:420px;}.support-direct-grid{gap:14px;}}
+@media (max-width:560px){.support-direct-sheet{padding:22px!important;}.support-qr-wrap{grid-template-columns:1fr;text-align:center;}.support-qr-wrap img{margin:0 auto;}.support-direct-card{padding:18px;border-radius:22px;}.support-card-head h3{font-size:24px;}}
+
 </style>
 
 
@@ -3333,12 +3533,13 @@ body.lang-en .home-language-switch button:first-child,body.lang-zh .home-languag
       <p><span class="only-en">Your order helps support cultural learning, women’s stories and the development of the Nüshu board game.</span><span class="only-zh">你的预订将支持女书文化学习、女性故事传播和桌游产品继续完善。</span></p>
     </div>
 
-    <div class="order-payment-note"><span class="only-en">Product payment is processed securely through Stripe. Donation is handled separately in the Support section. After checkout, order details will be emailed to HerScript Studio.</span><span class="only-zh">商品付款将通过 Stripe 安全完成；捐赠在 Support 区域单独处理。付款前，你的收货信息会发送到 HerScript Studio 邮箱。</span></div>
     <form class="order-form" id="orderForm" action="https://formsubmit.co/tianawei0@gmail.com" method="POST" onsubmit="return prepareOrderDirectSubmit(event)">
       <input type="hidden" name="_subject" id="orderSubjectHidden" value="Nüshu Board Game Order Inquiry">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_next" value="https://buy.stripe.com/eVqaEX4aSe3h0Zj63c33W00">
       <input type="hidden" name="Product Payment Link" value="https://buy.stripe.com/eVqaEX4aSe3h0Zj63c33W00">
+      <input type="hidden" name="Unit Price" id="orderUnitPriceHidden" value="NZ$49">
+      <input type="hidden" name="Estimated Total" id="orderEstimatedTotalHidden" value="NZ$49">
       <input type="hidden" name="Donation Link" value="https://donate.stripe.com/dRm7sL36Ogbp4bv9fo33W01">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_autoresponse" value="Thank you for your order enquiry. HerScript Studio has received your message and will reply as soon as possible.">
@@ -3346,16 +3547,24 @@ body.lang-en .home-language-switch button:first-child,body.lang-zh .home-languag
         <label><span class="only-en">Name</span><span class="only-zh">姓名</span><input id="orderName" name="Name" required placeholder="Your name / 你的名字"></label>
         <label><span class="only-en">Email</span><span class="only-zh">邮箱</span><input id="orderEmail" name="Customer Email" type="email" required placeholder="your@email.com"></label>
         <label><span class="only-en">Phone</span><span class="only-zh">电话</span><input id="orderPhone" name="Phone" placeholder="Phone number / 电话号码"></label>
-        <div class="quantity-card">
-          <span class="quantity-title"><span class="only-en">Choose quantity</span><span class="only-zh">选择购买数量</span></span>
-          <div class="quantity-options" aria-label="Choose quantity">
-            <button type="button" class="active" onclick="setOrderQuantity(1,this)">1</button>
-            <button type="button" onclick="setOrderQuantity(2,this)">2</button>
-            <button type="button" onclick="setOrderQuantity(3,this)">3</button>
-            <button type="button" onclick="setOrderQuantity(5,this)">5</button>
+        <div class="quantity-card price-quantity-card">
+          <div class="quantity-left">
+            <span class="quantity-title"><span class="only-en">Choose quantity</span><span class="only-zh">选择购买数量</span></span>
+            <div class="quantity-options" aria-label="Choose quantity">
+              <button type="button" class="active" onclick="setOrderQuantity(1,this)">1</button>
+              <button type="button" onclick="setOrderQuantity(2,this)">2</button>
+              <button type="button" onclick="setOrderQuantity(3,this)">3</button>
+              <button type="button" onclick="setOrderQuantity(5,this)">5</button>
+            </div>
           </div>
-          <label><span class="only-en">Custom quantity</span><span class="only-zh">自定义数量</span><input id="orderQuantity" name="Quantity" type="number" min="1" value="1" oninput="updateOrderEstimate()"></label>
-          <div class="quantity-total" id="quantityTotal"><span class="only-en">Selected quantity: 1 set. Final payment quantity can be confirmed on Stripe.</span><span class="only-zh">已选择：1 套。最终付款数量可在 Stripe 页面确认。</span></div>
+          <label class="quantity-custom"><span class="only-en">Custom quantity</span><span class="only-zh">自定义数量</span><input id="orderQuantity" name="Quantity" type="number" min="1" value="1" oninput="updateOrderEstimate()"></label>
+          <div class="price-summary-card" id="quantityTotal" aria-live="polite">
+            <div class="price-line"><span><span class="only-en">Unit price</span><span class="only-zh">单价</span></span><strong>NZ$49</strong></div>
+            <div class="price-line"><span><span class="only-en">Quantity</span><span class="only-zh">数量</span></span><strong>1</strong></div>
+            <div class="price-line total"><span><span class="only-en">Estimated total</span><span class="only-zh">预估总价</span></span><strong>NZ$49</strong></div>
+            <p><span class="only-en">Shipping is not included.</span><span class="only-zh">不含运费。</span></p>
+            <div class="stripe-quantity-reminder"><span class="only-en"><strong>Important:</strong> please choose the same quantity again on the Stripe payment page before paying.</span><span class="only-zh"><strong>重要提示：</strong>进入 Stripe 付款页面后，请顾客再次选择相同购买数量再付款。</span></div>
+          </div>
         </div>
         <label><span class="only-en">City / Area</span><span class="only-zh">城市 / 地区</span><input id="orderLocation" name="City / Area" placeholder="Auckland / 奥克兰"></label>
         <label><span class="only-en">Postcode</span><span class="only-zh">邮编</span><input id="orderPostcode" name="Postcode" placeholder="Postcode / 邮编"></label>
@@ -3364,11 +3573,8 @@ body.lang-en .home-language-switch button:first-child,body.lang-zh .home-languag
         <label><span class="only-en">Purpose</span><span class="only-zh">用途</span><select id="orderPurpose" name="Purpose"><option>School fair / 学校市集</option><option>Personal purchase / 个人购买</option><option>Gift / 礼物</option><option>Exhibition / 展览</option><option>Collaboration / 合作</option></select></label>
         <label class="wide"><span class="only-en">Delivery Notes / Message</span><span class="only-zh">配送备注 / 留言</span><textarea id="orderMessage" name="Delivery Notes / Message" placeholder="Delivery instructions, questions, or event details. / 写下配送要求、问题或活动信息。"></textarea></label>
       </div>
-      <div class="order-buttons">
-        <button class="order-submit pay-main" type="submit"><span class="only-en">Submit Details & Pay Online</span><span class="only-zh">提交信息并在线付款</span> →</button>
-        <button class="pay-only" type="button" onclick="openStripeCheckout()"><span class="only-en">Pay Online Only</span><span class="only-zh">只在线付款</span></button>
-        <button type="button" onclick="saveOrderDraft()"><span class="only-en">Save Draft</span><span class="only-zh">保存草稿</span></button>
-        <button type="button" onclick="clearOrderForm()"><span class="only-en">Clear</span><span class="only-zh">清空</span></button>
+      <div class="order-buttons stripe-button-only">
+        <button class="pay-online-single" type="button" onclick="openStripeCheckout()"><span class="only-en">Pay Online on Stripe</span><span class="only-zh">前往 Stripe 在线支付</span> →<span class="pay-note only-en">Change quantity on Stripe before checkout</span><span class="pay-note only-zh">付款前请在 Stripe 页面更改数量</span></button>
       </div>
       <div class="order-status" id="orderStatus"></div>
     </form>
@@ -3380,63 +3586,104 @@ body.lang-en .home-language-switch button:first-child,body.lang-zh .home-languag
     <span>支持</span>
   </button>
 
-  <div id="donateModal" class="donate-modal">
-    <div class="donate-sheet">
-      <button class="donate-close" onclick="closeDonateModal()">×</button>
-      <div class="donate-head">
-        <div>
-          <h2>Support & Collaborate /<br>支持项目与合作</h2>
-        </div>
-        <div class="donate-copy">
-          HerScript Studio is an independent cultural and creative project. Your support helps sustain ongoing work in film production, Nüshu storytelling, digital preservation, and future public presentations. You are also welcome to collaborate on exhibitions, educational projects, visual identity, and cultural storytelling initiatives.<br><br>
-          HerScript Studio 是一个独立的文化创意项目。你的支持将帮助这个项目继续推进短片创作、女书叙事、数字化保存以及未来的公众传播与展示。你也可以通过展览合作、教育项目、视觉传播与文化叙事共创等方式参与其中。
-        </div>
-      </div>
+  
+<div id="donateModal" class="donate-modal">
+  <div class="donate-sheet support-direct-sheet">
+    <button class="donate-close" onclick="closeDonateModal()">×</button>
 
-      <div class="donate-grid">
-        <div class="donate-card">
-          <h3>Donation / 项目捐赠</h3>
-          <p>Scan the QR code or click the donation button to support HerScript Studio. This is separate from product payment.<br>扫描二维码或点击捐赠按钮支持 HerScript Studio。这里是 Donation，不是商品付款。</p>
-          <img class="donation-qr-img" src="data:image/png;base64,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" alt="Stripe donation QR code">
-          <div class="donation-link-row">
-            <button class="donate-btn" onclick="openDonationLink()"><span class="only-en">Donate by Stripe</span><span class="only-zh">通过 Stripe 捐赠</span></button>
-            <a href="https://donate.stripe.com/dRm7sL36Ogbp4bv9fo33W01" target="_blank" rel="noopener">https://donate.stripe.com/dRm7sL36Ogbp4bv9fo33W01</a>
-          </div>
-          <div class="payment-separation-note"><span class="only-en"><b>Donation:</b> for supporting the project. <b>Payment:</b> for buying the Nüshu Board Game.</span><span class="only-zh"><b>Donation：</b>用于支持项目。<b>Payment：</b>用于购买女书大富翁产品。</span></div>
-        </div>
-        <div class="donate-card">
-          <h3>Why Support / 为什么支持</h3>
-          <p>Your contribution supports visual research, archive building, film development, and the creation of new public-facing cultural experiences based on Nüshu.<br>你的支持将用于视觉研究、档案整理、短片开发，以及基于女书的公共文化体验设计。</p>
-          <div class="funding-wrap">
-            <div class="funding-top">
-              <div>
-                <div class="funding-label">Funding Progress / 筹资进度</div>
-                <div class="funding-value"><span id="fundRaised">$2,400</span> / <span id="fundGoal">$5,000</span></div>
-              </div>
-              <div class="funding-label"><span id="fundPercent">48%</span></div>
-            </div>
-            <div class="funding-bar"><div id="fundBar" class="funding-progress"></div></div>
-            <div class="funding-meta">
-              <span>Current milestone: short film production / 当前阶段：短片制作</span>
-              <span id="selectedAmountLabel">Donation link is separate from product payment.</span>
-            </div>
-          </div>
-        </div>
-        <div class="donate-card">
-          <h3>Collaborate / 项目合作</h3>
-          <p>Email, social media, institution notes, or collaboration requests can be placed here.<br>这里可以放邮箱、社交媒体、机构说明，或项目合作方式。</p>
-          <div class="donate-actions">
-            <button class="donate-btn" onclick="openPaymentLink('contact')">Contact / 联系我们</button>
-            <button class="donate-btn light" onclick="openPaymentLink('proposal')">Project Deck</button>
-          </div>
-          <div class="donate-meta">Use these buttons for your email form, collaboration deck, or scheduling link.<br>这两个按钮可接邮箱表单、合作提案或预约链接。</div>
-        </div>
+    <div class="support-direct-hero">
+      <div>
+        <div class="support-eyebrow"><span class="only-en">Support HerScript Studio</span><span class="only-zh">支持 HerScript Studio</span></div>
+        <h2>Support & Contact<br><span>HerScript Studio</span></h2>
+        <p>
+          <span class="only-en">Support the Nüshu cultural learning project, contact us for collaboration, or follow our latest updates. This support page is now directly usable.</span>
+          <span class="only-zh">你可以在这里直接支持女书文化学习项目、发送合作信息，或关注我们的最新动态。这个 Support 页面已经可以直接使用。</span>
+        </p>
       </div>
-      <div class="donate-cancel-row">
-        <button class="donate-cancel-btn" onclick="closeDonateModal()">Cancel / 取消</button>
+      <div class="support-quick-card">
+        <b>HerScript Studio</b>
+        <span>@herscriptstudio.1120</span>
+        <a href="mailto:tianawei0@gmail.com">tianawei0@gmail.com</a>
       </div>
     </div>
+
+    <div class="support-direct-grid">
+      <article class="support-direct-card donation-card-main">
+        <div class="support-card-head">
+          <small><span class="only-en">Donation</span><span class="only-zh">项目捐赠</span></small>
+          <h3><span class="only-en">Scan or donate online</span><span class="only-zh">扫码或在线捐赠</span></h3>
+        </div>
+        <p>
+          <span class="only-en">Use this donation link to support research, storytelling, website development, film production, and future public presentations. This is separate from product payment.</span>
+          <span class="only-zh">使用此捐赠链接支持研究、故事整理、网站开发、短片制作与未来公共展示。这里是 Donation，与商品购买付款分开。</span>
+        </p>
+        <div class="support-qr-wrap">
+          <img class="donation-qr-img" src="data:image/png;base64,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" alt="Stripe donation QR code">
+          <div>
+            <b><span class="only-en">Stripe Donation</span><span class="only-zh">Stripe 捐赠</span></b>
+            <span><span class="only-en">Scan with your phone or click the button below.</span><span class="only-zh">可用手机扫码，也可点击下方按钮。</span></span>
+          </div>
+        </div>
+        <div class="support-action-row">
+          <a class="support-primary-btn" href="https://donate.stripe.com/dRm7sL36Ogbp4bv9fo33W01" target="_blank" rel="noopener">
+            <span class="only-en">Donate by Stripe</span><span class="only-zh">通过 Stripe 捐赠</span> →
+          </a>
+        </div>
+      </article>
+
+      <article class="support-direct-card support-contact-card">
+        <div class="support-card-head">
+          <small><span class="only-en">Message</span><span class="only-zh">发送信息</span></small>
+          <h3><span class="only-en">Contact us directly</span><span class="only-zh">直接联系项目</span></h3>
+        </div>
+        <p>
+          <span class="only-en">Send a message about orders, school fairs, exhibitions, collaborations, media, or cultural education projects.</span>
+          <span class="only-zh">你可以发送关于订单、学校市集、展览、合作、媒体或文化教育项目的信息。</span>
+        </p>
+        <form class="support-message-form" action="https://formsubmit.co/tianawei0@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="HerScript Studio Support / Collaboration Message">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="Project" value="HerScript Studio / Nüshu Board Game">
+          <label><span class="only-en">Your name</span><span class="only-zh">你的姓名</span><input name="Name" type="text" required placeholder="Your name"></label>
+          <label><span class="only-en">Email</span><span class="only-zh">邮箱</span><input name="Email" type="email" required placeholder="your@email.com"></label>
+          <label><span class="only-en">Message type</span><span class="only-zh">信息类型</span>
+            <select name="Message Type">
+              <option>Order question / 订单问题</option>
+              <option>School fair / 学校市集</option>
+              <option>Collaboration / 合作</option>
+              <option>Exhibition / 展览</option>
+              <option>Media / 媒体</option>
+              <option>General support / 一般支持</option>
+            </select>
+          </label>
+          <label><span class="only-en">Message</span><span class="only-zh">留言</span><textarea name="Message" required placeholder="Write your message here..."></textarea></label>
+          <button class="support-primary-btn" type="submit"><span class="only-en">Send Message</span><span class="only-zh">发送信息</span> →</button>
+        </form>
+      </article>
+
+      <article class="support-direct-card support-info-card">
+        <div class="support-card-head">
+          <small><span class="only-en">Official links</span><span class="only-zh">官方联系方式</span></small>
+          <h3><span class="only-en">Follow & connect</span><span class="only-zh">关注与联系</span></h3>
+        </div>
+        <div class="support-link-list">
+          <a href="mailto:tianawei0@gmail.com"><b>Email</b><span>tianawei0@gmail.com</span></a>
+          <a href="https://www.instagram.com/herscriptstudio.1120/" target="_blank" rel="noopener"><b>Instagram</b><span>@herscriptstudio.1120</span></a>
+          <button type="button" onclick="showPage('shop'); closeDonateModal();"><b><span class="only-en">Product payment</span><span class="only-zh">商品付款</span></b><span><span class="only-en">Order the Nüshu Board Game</span><span class="only-zh">预订女书大富翁</span></span></button>
+        </div>
+        <div class="support-separation-note">
+          <span class="only-en"><b>Donation</b> supports the project. <b>Product payment</b> is for purchasing the Nüshu Board Game.</span>
+          <span class="only-zh"><b>Donation</b> 用于支持项目。<b>Product payment</b> 用于购买女书大富翁产品。</span>
+        </div>
+      </article>
+    </div>
+
+    <div class="donate-cancel-row">
+      <button class="donate-cancel-btn" onclick="closeDonateModal()"><span class="only-en">Close</span><span class="only-zh">关闭</span></button>
+    </div>
   </div>
+</div>
 
   <div id="storyModal" class="story-modal">
     <div class="story-scene">
@@ -4530,17 +4777,34 @@ function setOrderQuantity(value, button){
   updateOrderEstimate();
 }
 function updateOrderEstimate(){
-  const q=Number(document.getElementById('orderQuantity')?.value||1);
+  const unitPrice = 49;
+  const input = document.getElementById('orderQuantity');
+  const qty = Math.max(1, Number(input?.value || 1) || 1);
+  if(input && String(input.value) !== String(qty)) input.value = qty;
+  const total = unitPrice * qty;
   const label=document.getElementById('quantityTotal');
+  const hiddenTotal=document.getElementById('orderEstimatedTotalHidden');
+  if(hiddenTotal) hiddenTotal.value = 'NZ$' + total;
   if(label){
-    const qty = Math.max(1, q || 1);
     label.innerHTML = document.body.classList.contains('lang-zh')
-      ? '已选择：' + qty + ' 套。请在 Stripe 付款页面确认相同数量。'
-      : 'Selected quantity: ' + qty + ' set(s). Please confirm the same quantity on Stripe checkout.';
+      ? '<div class="price-line"><span>单价</span><strong>NZ$49</strong></div>'
+        + '<div class="price-line"><span>数量</span><strong>' + qty + '</strong></div>'
+        + '<div class="price-line total"><span>预估总价</span><strong>NZ$' + total + '</strong></div>'
+        + '<p>不含运费。</p><div class="stripe-quantity-reminder"><strong>重要提示：</strong>进入 Stripe 付款页面后，请顾客再次选择相同购买数量再付款。</div>'
+      : '<div class="price-line"><span>Unit price</span><strong>NZ$49</strong></div>'
+        + '<div class="price-line"><span>Quantity</span><strong>' + qty + '</strong></div>'
+        + '<div class="price-line total"><span>Estimated total</span><strong>NZ$' + total + '</strong></div>'
+        + '<p>Shipping is not included.</p><div class="stripe-quantity-reminder"><strong>Important:</strong> please choose the same quantity again on the Stripe payment page before paying.</div>';
   }
 }
 
 function openStripeCheckout(){
+  const qty = document.getElementById('orderQuantity')?.value || '1';
+  const isZh = document.body.classList.contains('lang-zh');
+  const message = isZh
+    ? '请在 Stripe 付款页面把数量改成 ' + qty + '，再完成付款。'
+    : 'Please change the quantity to ' + qty + ' on the Stripe payment page before completing payment.';
+  alert(message);
   window.open('https://buy.stripe.com/eVqaEX4aSe3h0Zj63c33W00', '_blank', 'noopener');
 }
 function prepareOrderDirectSubmit(e){
